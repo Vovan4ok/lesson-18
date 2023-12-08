@@ -50,7 +50,7 @@
                     </tbody>
                 </table>
             </c:when>
-            <c:when test="${mode == 'PARTICIPANT_CREATE' || 'PARTICIPANT_EDIT'}">
+            <c:when test="${mode == 'PARTICIPANT_CREATE' || mode == 'PARTICIPANT_EDIT'}">
                 <form method="POST" class="form-horizontal" action="save">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
@@ -71,10 +71,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="skill">Primary skill:</label>
+                        <label class="control-label col-sm-2" for="primarySkill">Primary skill:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="skill" placeholder="Enter primary skill" name="skill" value="${participant.primarySkill}">
+                            <input type="text" class="form-control" id="primarySkill" placeholder="Enter primary skill" name="primarySkill" value="${participant.primarySkill}">
                         </div>
+                    </div>
+                    <div style="visibility: hidden;">
+                        <input type="number" value="${participant.id}" id="id">
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

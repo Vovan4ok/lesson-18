@@ -16,14 +16,7 @@ public class Participant {
         this.level = level;
         this.primarySkill = primarySkill;
     }
-
-    public Participant(String name, String email, String level, String primarySkill) {
-        this.name = name;
-        this.email = email;
-        this.level = level;
-        this.primarySkill = primarySkill;
-    }
-
+    public Participant() {}
     public String getName() {
         return name;
     }

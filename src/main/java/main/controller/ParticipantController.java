@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,14 +38,14 @@ public class ParticipantController {
     }
 
     @GetMapping("/update")
-    public String update(@ModelAttribute int id, HttpServletRequest request) {
+    public String update(@RequestParam int id, HttpServletRequest request) {
         request.setAttribute("participant", participantService.readById(id));
         request.setAttribute("mode", "PARTICIPANT_EDIT");
         return "index";
     }
 
     @GetMapping("/delete")
-    public String delete(@ModelAttribute int id, HttpServletRequest request) {
+    public String delete(@RequestParam int id, HttpServletRequest request) {
         participantService.delete(id);
         request.setAttribute("participants", participantService.readAll());
         request.setAttribute("mode", "PARTICIPANT_VIEW");
