@@ -76,9 +76,6 @@
                             <input type="text" class="form-control" id="primarySkill" placeholder="Enter primary skill" name="primarySkill" value="${participant.primarySkill}">
                         </div>
                     </div>
-                    <div style="visibility: hidden;">
-                        <input type="number" value="${participant.id}" id="id">
-                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default">Submit</button>
